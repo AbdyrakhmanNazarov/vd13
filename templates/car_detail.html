@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <section class="car-detail-section">
+    <div class="container">
+
+      <a href="{% url 'clients' %}" class="btn btn-secondary">Назад к клиентам</a>
+
+      <h1>Детали автомобиля</h1>
+
+      <div class="car-card">
+        {% if car.avatar %}
+          <img src="{{ car.avatar.url }}" alt="Аватар {{ car.brand }}" class="car-avatar" />
+        {% else %}
+          <div class="no-avatar">Нет аватара</div>
+        {% endif %}
+
+        <div class="car-info">
+          <p>
+            <strong>Владелец:</strong> {{ car.owner }}
+          </p>
+          <p>
+            <strong>Марка:</strong> {{ car.brand }}
+          </p>
+          <p>
+            <strong>Модель:</strong> {{ car.model }}
+          </p>
+          <p>
+            <strong>Год:</strong> {{ car.year }}
+          </p>
+          <p>
+            <strong>Тип двигателя:</strong> {{ car.engine }}
+          </p>
+          <p>
+            <strong>Объем двигателя:</strong> {{ car.engine_capacity }}
+          </p>
+          <p>
+            <strong>Гос номер:</strong> {{ car.number_plate }}
+          </p>
+          <p>
+            <strong>Телефон:</strong> {{ car.phone_number }}
+          </p>
+          <p>
+            <strong>Email:</strong> {{ car.email }}
+          </p>
+          <p>
+            <strong>Категория:</strong> {{ car.group.name }}
+          </p>
+          
+          <p>
+            <strong>Дата создания:</strong> {{ car.join_date }}
+          </p>
+          <p>
+            <strong>Описание:</strong> {{ car.description }}
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{% endblock %}

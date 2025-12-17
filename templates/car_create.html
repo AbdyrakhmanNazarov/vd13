@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <section class="car-form-section">
+    <div class="container">
+      <a href="{% url 'main' %}" class="btn-back">⬅ Назад</a>
+
+      <h1>Добавить новый автомобиль</h1>
+
+      {% if request.GET.whatsapp_url %}
+        <script>
+          window.open('{{ request.GET.whatsapp_url }}', '_blank')
+          alert('Регистрация прошла успешно! Мастер уже получил уведомление.')
+        </script>
+      {% endif %}
+      
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label>Владелец</label>
+          <input type="text" name="owner" required />
+        </div>
+
+        <div class="form-group">
+          <label>Марка</label>
+          <input type="text" name="brand" required />
+        </div>
+
+        <div class="form-group">
+          <label>Модель</label>
+          <input type="text" name="model" required />
+        </div>
+
+        <div class="form-group">
+          <label>Год</label>
+          <input type="number" name="year" />
+        </div>
+
+        <div class="form-group">
+          <label>Тип двигателя</label>
+          <select name="new_engine">
+            <option value="Бензин">Бензин</option>
+            <option value="Диз топливо">Диз топливо</option>
+            <option value="Гибрид">Гибрид</option>
+            <option value="Прочий">Прочий</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Объем двигателя (л)</label>
+          <input type="text" name="engine_capacity" />
+        </div>
+
+        <div class="form-group">
+          <label>Гос. номер</label>
+          <input type="text" name="number_plate" required />
+        </div>
+
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="text" name="phone_number" required />
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <label>Категория</label>
+          <select name="group">
+            {% for g in groups %}
+              <option value="{{ g.id }}">{{ g.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Аватар</label>
+          <input type="file" name="avatar" />
+        </div>
+
+        <div class="form-group">
+          <label>Описание</label>
+          <textarea name="description"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Создать</button>
+          <a href="{% url 'main' %}" class="btn btn-secondary">Главное меню</a>
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}

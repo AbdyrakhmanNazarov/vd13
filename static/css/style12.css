@@ -1,0 +1,626 @@
+/* ============================= */
+/*         СБРОС СТИЛЕЙ         */
+/* ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b0f2f, #1c1c38);
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+/* ============================= */
+/*          КОНТЕЙНЕР            */
+/* ============================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(10px, 2vw, 20px);
+}
+
+/* ============================= */
+/*           HEADER              */
+/* ============================= */
+header {
+    background: #0d0f2a;
+    padding: clamp(10px, 2vw, 20px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 20px);
+}
+
+header .logo h1 {
+    font-size: clamp(20px, 2vw, 32px);
+    color: #fff;
+}
+
+header .navigations nav ul {
+    display: flex;
+    list-style: none;
+    gap: clamp(15px, 3vw, 30px);
+}
+
+header .navigations nav ul li a {
+    color: #f0f0f0;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header .navigations nav ul li a:hover {
+    color: #7fffd4;
+}
+
+/* ============================= */
+/*           FOOTER              */
+/* ============================= */
+footer {
+    background: #0d0f2a;
+    padding: clamp(20px, 3vw, 40px);
+    text-align: center;
+    color: #a0a0a0;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================= */
+/*        ОБЩИЕ СЕКЦИИ           */
+/* ============================= */
+.section {
+    padding: clamp(30px, 5vw, 60px) 0;
+}
+
+.section h1,
+.section h2 {
+    color: #7fffd4;
+    margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+.section p {
+    margin-bottom: clamp(10px, 2vw, 20px);
+    color: #e0e0e0;
+}
+
+/* ============================= */
+/*       КНОПКА РЕГИСТРАЦИИ      */
+/* ============================= */
+.register-box {
+    text-align: center;
+    background: #1c1c38;
+    padding: clamp(20px, 3vw, 40px);
+    border-radius: clamp(10px, 2vw, 15px);
+    box-shadow: 0 0 20px rgba(127, 255, 212, 0.3);
+    color: #fff;
+}
+
+.register-box h2 {
+    font-size: clamp(20px, 3vw, 28px);
+    margin-bottom: clamp(10px, 2vw, 15px);
+}
+
+.register-box p {
+    font-size: clamp(14px, 2vw, 18px);
+    margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+.btn-register {
+    display: inline-block;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px);
+    font-size: clamp(14px, 2vw, 18px);
+    color: #1c1c38;
+    background: aquamarine;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-register:hover {
+    background: #7fffd4;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/*       СЛАЙДЕР С АВТОМАТИК     */
+/* ============================= */
+.slider {
+    position: relative;
+    max-width: clamp(300px, 80%, 1200px);
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: clamp(10px, 1.5vw, 20px);
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: inherit;
+    aspect-ratio: 16/9;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: clamp(20px, 2vw, 40px);
+    padding: clamp(5px, 1vw, 10px);
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.arrow.prev {
+    left: clamp(5px, 1vw, 20px);
+}
+
+.arrow.next {
+    right: clamp(5px, 1vw, 20px);
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ============================= */
+/*        КАРТОЧКИ КЛИЕНТОВ     */
+/* ============================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(15px, 2vw, 25px);
+    margin-top: clamp(20px, 3vw, 30px);
+}
+
+.card {
+    background: #1c1c38;
+    border-radius: clamp(10px, 2vw, 15px);
+    padding: clamp(15px, 2vw, 25px);
+    box-shadow: 0 0 20px rgba(127, 255, 212, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(127, 255, 212, 0.5);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: clamp(10px, 2vw, 15px);
+    margin-bottom: clamp(10px, 2vw, 15px);
+}
+
+.card div {
+    width: 100%;
+    text-align: left;
+    margin-bottom: clamp(5px, 1vw, 10px);
+    color: #e0e0e0;
+    font-size: clamp(14px, 1.2vw, 16px);
+}
+
+/* ============================= */
+/*        О НАС / МАСТЕР         */
+/* ============================= */
+.about-section .global {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: clamp(20px, 3vw, 30px);
+    padding: clamp(20px, 3vw, 40px);
+    background: #1c1c38;
+    border-radius: clamp(15px, 2vw, 20px);
+    box-shadow: 0 0 25px rgba(127, 255, 212, 0.3);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-section .about-image img {
+    width: clamp(150px, 25%, 200px);
+    height: clamp(150px, 25%, 200px);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #7fffd4;
+    margin-bottom: clamp(15px, 2vw, 20px);
+}
+
+.about-section .about-text h1 {
+    color: #7fffd4;
+    font-size: clamp(22px, 2.5vw, 28px);
+    margin-bottom: clamp(10px, 2vw, 15px);
+}
+
+.about-section .about-text p {
+    color: #e0e0e0;
+    font-size: clamp(16px, 1.5vw, 18px);
+    line-height: 1.6;
+}
+
+.about-section .btn-back {
+    display: inline-block;
+    margin-top: clamp(15px, 2vw, 25px);
+    color: #7fffd4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.about-section .btn-back:hover {
+    color: #ffffff;
+    transform: translateX(-5px);
+}
+
+@media (min-width: 768px) {
+    .about-section .global {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: clamp(30px, 3vw, 40px);
+    }
+
+    .about-section .about-image img {
+        margin-bottom: 0;
+    }
+}
+
+/* ============================= */
+/*      ФОРМА РЕГИСТРАЦИИ        */
+/* ============================= */
+.car-form-section h1 {
+    color: #7fffd4;
+    margin-bottom: clamp(20px, 3vw, 30px);
+    text-align: center;
+}
+
+.car-form-section form {
+    background: #1c1c38;
+    padding: clamp(25px, 3vw, 35px);
+    border-radius: clamp(15px, 2vw, 20px);
+    box-shadow: 0 0 25px rgba(127, 255, 212, 0.3);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.car-form-section .form-group {
+    margin-bottom: clamp(15px, 2vw, 25px);
+}
+
+.car-form-section label {
+    display: block;
+    margin-bottom: clamp(5px, 1vw, 10px);
+    font-weight: 500;
+    color: #fff;
+}
+
+.car-form-section input,
+.car-form-section select,
+.car-form-section textarea {
+    width: 100%;
+    padding: clamp(10px, 1vw, 15px);
+    border-radius: clamp(8px, 1vw, 12px);
+    border: none;
+    background: #0b0f2f;
+    color: #fff;
+    font-size: clamp(14px, 1.2vw, 16px);
+}
+
+.car-form-section textarea {
+    resize: vertical;
+    min-height: clamp(80px, 10vw, 120px);
+}
+
+.car-form-section .form-actions {
+    display: flex;
+    gap: clamp(15px, 2vw, 25px);
+    justify-content: center;
+    margin-top: clamp(10px, 2vw, 20px);
+}
+
+.car-form-section .btn {
+    padding: clamp(10px, 1vw, 15px) clamp(20px, 2vw, 30px);
+    border: none;
+    border-radius: clamp(8px, 1vw, 12px);
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.car-form-section .btn-primary {
+    background: #7fffd4;
+    color: #0b0f2f;
+}
+
+.car-form-section .btn-primary:hover {
+    background: #4fd1c5;
+}
+
+.car-form-section .btn-secondary {
+    background: #444466;
+    color: #fff;
+}
+
+.car-form-section .btn-secondary:hover {
+    background: #666688;
+}
+
+.car-form-section .btn-danger {
+    background: #ff4d4d;
+    color: #fff;
+}
+
+.car-form-section .btn-danger:hover {
+    background: #ff1a1a;
+}
+
+/* ============================= */
+/*      КАРТОЧКА АВТОМОБИЛЯ      */
+/* ============================= */
+.car-detail-section {
+    padding: clamp(30px, 5vw, 60px) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-detail-section .container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.car-detail-section .btn {
+    display: inline-block;
+    margin-bottom: clamp(15px, 2vw, 25px);
+    padding: clamp(10px, 1vw, 15px) clamp(20px, 2vw, 30px);
+    background: #444466;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.car-detail-section .btn:hover {
+    background: #666688;
+}
+
+.car-card {
+    background: #1c1c38;
+    border-radius: clamp(15px, 2vw, 20px);
+    padding: clamp(20px, 3vw, 30px);
+    box-shadow: 0 0 25px rgba(127, 255, 212, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(15px, 2vw, 25px);
+    text-align: left;
+}
+
+.car-avatar {
+    width: clamp(200px, 40%, 250px);
+    height: clamp(200px, 40%, 250px);
+    object-fit: cover;
+    border-radius: clamp(10px, 2vw, 15px);
+    border: 3px solid #7fffd4;
+}
+
+.no-avatar {
+    width: clamp(200px, 40%, 250px);
+    height: clamp(200px, 40%, 250px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #33334d;
+    color: #ccc;
+    font-size: clamp(14px, 1.5vw, 18px);
+    border-radius: clamp(10px, 2vw, 15px);
+    border: 3px dashed #7fffd4;
+}
+
+.car-info p {
+    font-size: clamp(14px, 1.2vw, 16px);
+    color: #e0e0e0;
+    margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+@media (min-width: 768px) {
+    .car-card {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .car-avatar,
+    .no-avatar {
+        margin-right: clamp(20px, 3vw, 30px);
+    }
+}
+
+/* ============================= */
+/*          АДАПТИВНОСТЬ         */
+/* ============================= */
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: clamp(10px, 3vw, 20px);
+    }
+
+    .card img {
+        height: auto;
+    }
+}
+
+/* ============================= */
+/*      ФОРМА ОТЗЫВА             */
+/* ============================= */
+.clients-reviews form {
+    margin-bottom: clamp(25px, 2.5vw, 35px);
+    background: #1c1c38;
+    padding: clamp(20px, 2vw, 25px);
+    border-radius: clamp(12px, 1.5vw, 16px);
+    box-shadow: 0 0 20px rgba(127, 255, 212, 0.25);
+    max-width: 500px;
+    /* уменьшено с 700px */
+    margin: 0 auto;
+}
+
+.clients-reviews form input,
+.clients-reviews form textarea {
+    width: 100%;
+    padding: clamp(8px, 0.8vw, 12px);
+    margin-bottom: clamp(12px, 1.5vw, 18px);
+    border-radius: clamp(6px, 0.8vw, 10px);
+    border: 1px solid #444466;
+    background: #0b0f2f;
+    color: #fff;
+    font-size: clamp(13px, 1.1vw, 15px);
+}
+
+.clients-reviews form textarea {
+    min-height: clamp(60px, 8vw, 100px);
+}
+
+.clients-reviews form button {
+    padding: clamp(10px, 0.8vw, 14px) clamp(18px, 1.5vw, 25px);
+    border-radius: 50px;
+    border: none;
+    background: aquamarine;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: clamp(14px, 1.1vw, 16px);
+}
+
+.clients-reviews form button:hover {
+    background: #7fffd4;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/*       РЕЙТИНГ ЗВЕЗДЫ         */
+/* ============================= */
+.clients-reviews .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-bottom: clamp(15px, 2vw, 20px);
+}
+
+.clients-reviews .rating input {
+    display: none;
+    /* скрываем стандартные радиокнопки */
+}
+
+.clients-reviews .rating label {
+    font-size: clamp(25px, 2.5vw, 30px);
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* Подсветка звезд при наведении */
+.clients-reviews .rating label:hover,
+.clients-reviews .rating label:hover~label {
+    color: gold;
+    transform: scale(1.1);
+}
+
+/* Подсветка выбранных звезд */
+.clients-reviews .rating input:checked~label {
+    color: gold;
+}
+
+/* ============================= */
+/*      КАРТОЧКИ ОТЗЫВОВ         */
+/* ============================= */
+.reviews-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(15px, 2vw, 20px);
+    margin-top: clamp(20px, 3vw, 30px);
+}
+
+.review-card {
+    background: #1c1c38;
+    border-radius: clamp(12px, 1.5vw, 18px);
+    padding: clamp(15px, 2vw, 20px);
+    box-shadow: 0 0 20px rgba(127, 255, 212, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(127, 255, 212, 0.4);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.review-header h3 {
+    font-size: clamp(16px, 1.3vw, 18px);
+    color: #7fffd4;
+}
+
+.review-rating .star {
+    color: #444466;
+    font-size: clamp(14px, 1.2vw, 16px);
+}
+
+.review-rating .star.active {
+    color: gold;
+}
+
+.review-card p {
+    font-size: clamp(14px, 1.2vw, 16px);
+    color: #e0e0e0;
+    margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.review-card small {
+    font-size: clamp(12px, 1vw, 14px);
+    color: #999;
+    text-align: right;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .reviews-cards {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: clamp(10px, 3vw, 15px);
+    }
+
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp(5px, 1vw, 8px);
+    }
+}

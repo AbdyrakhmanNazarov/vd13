@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="section">
+    <div class="container">
+      <div class="global">
+
+        <a href="{% url 'main' %}" class="btn-back">⬅ Назад</a>
+
+        <div class="cards">
+          {% for element in cars %}
+            <div class="card">
+              <div class="card-image">
+                <a href="{% url 'car_detail' id=element.id %}">
+                  {% if element.avatar %}
+                    <img src="{{ element.avatar.url }}" alt="{{ element.name }}" />
+                  {% else %}
+                    <img src="{% static 'images/default-avatar.jpg' %}" alt="Нет аватара" />
+                  {% endif %}
+                </a>
+              </div>
+              <div class="card-info">
+                <div><strong>Владелец:</strong> {{ element.owner }}</div>
+                <div><strong>Марка:</strong> {{ element.brand }}</div>
+                <div><strong>Модель:</strong> {{ element.model }}</div>
+                <div><strong>Год:</strong> {{ element.year }}</div>
+                <div><strong>Тип авто:</strong> {{ element.engine }}</div>
+                <div><strong>Объем двигателя:</strong> {{ element.engine_capacity }}</div>                    
+                <div><strong>Описание:</strong> {{ element.description }}</div>
+              </div>
+            </div>
+          {% empty %}
+            <p>Пока нет активных автомобилей.</p>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

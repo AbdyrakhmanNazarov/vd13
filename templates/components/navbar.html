@@ -1,0 +1,35 @@
+{% load static %}
+
+<header>
+  <div class="box header">
+    <div class="container">
+      <div class="logo">
+        <h1>Водородная очистка двигателя "Ош"</h1>
+      </div>
+
+      <div class="navigations">
+        <nav>
+          <a href="{% url 'main' %}">Главная</a>
+          <a href="{% url 'about' %}">О нас</a>
+          <a href="{% url 'clients' %}">Клиенты</a>
+          <a href="{% url 'clients_review' %}">Отзывы</a>
+
+          <h4>+996(554)06-12-07</h4>
+          <h4>г. Ош ул. Осконалиева 6</h4>
+        </nav>
+      </div>
+
+      <div class="icons">
+        <h2>Мы в соцсетях</h2>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/vodorod.osh.kg" target="_blank"><img class="instagram" src="{% static 'icons/icons8-instagram.svg' %}" alt="Instagram" /></a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@vodorod.kg.osh" target="_blank"><img class="tiktok" src="{% static 'icons/icons8-tiktok.svg' %}" alt="TikTok" /></a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/996553029494" target="_blank"><img class="whatsapp" src="{% static 'icons/icons8-whatsapp.svg' %}" alt="WhatsApp" /></a>
+      </div>
+    </div>
+  </div>
+</header>

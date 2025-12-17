@@ -1,0 +1,65 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Testing
+coverage/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PyCharm
+.idea/
+*.iml
+
+# Virtual environment
+venv/
+env/
+
+# Package manager
+Pipfile.lock
+poetry.lock
+pyproject.toml
+
+# Database migrations (если хотите игнорировать, но обычно НЕ нужно)
+# cars/migrations/
+# vodorod_cars/migrations/
+
+# Статика (если собираете статику в другом месте)
+# staticfiles/
+
+# Логи
+*.log
+
+# Временные файлы
+tmp/
+temp/
