@@ -1,6 +1,7 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.utils.html import mark_safe
+from django_resized import ResizedImageField
 
 # ======================== Категории авто ========================
 class Group(models.Model):
@@ -35,7 +36,13 @@ class Cars(models.Model):
     email = models.EmailField(verbose_name="Электронная почта", null=True, blank=True)
     is_active = models.BooleanField(default=True, verbose_name="Активен")
     group = models.ForeignKey(Group, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Категория")
-    avatar = models.ImageField(upload_to="Авто_фото", null=True, blank=True)
+    avatar = ResizedImageField(
+        size=[300, 300],       # размеры картинки (ширина, высота)
+        crop=['middle', 'center'],  # как обрезать, если не пропорционально
+        upload_to='avatars/',  # куда сохранять файлы (media/avatars/)
+        null=True,
+        blank=True
+    )
 
     # Двигатель
     engine = models.CharField(max_length=15, choices=TYPE_ENGINE_CHOICES, default="Бензин", verbose_name="Тип двигателя")
